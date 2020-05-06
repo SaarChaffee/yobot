@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.8
 LABEL author="winrey"
 
 #print()时在控制台正常显示中文
