@@ -2,7 +2,6 @@ version: '3'
 services:
   bot:
     build: .
-    env_file: .env
     restart: on-failure
     command: bash -c "
       python3 main.py > /dev/null 2 > /dev/null
