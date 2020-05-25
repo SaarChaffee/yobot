@@ -5,6 +5,7 @@ services:
     ports:
       - "9222:9222"
     env_file: .env
+    container_name: skadi
     restart: on-failure
     command: >
       bash -c "
@@ -20,8 +21,8 @@ services:
     env_file: .env
     restart: on-failure
     environment:
-      - VNC_PASSWD=${VNC_PWD}
-      - COOLQ_ACCOUNT=${QQ_ACCOUNT} # 要登录的 QQ 账号，可选但建议填
+      - VNC_PASSWD=070809abcD
+      - COOLQ_ACCOUNT=3277653281 # 要登录的 QQ 账号，可选但建议填
       - COOLQ_URL=${COOLQ_VERSION_URL}
       - CQHTTP_USE_HTTP=false
       - CQHTTP_USE_WS=false
@@ -39,6 +40,7 @@ services:
       - CQHTTP_PERFORM_UPDATE=false
       - CQHTTP_SHOW_LOG_CONSOLE=true
       - CQHTTP_LOG_LEVEL=info
+      - CQHTTP_ACCESS-TOKEN=41873817hdukas.#
     volumes:
       - ./cqhttp:/home/user/coolq
     ports:

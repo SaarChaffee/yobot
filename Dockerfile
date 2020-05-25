@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster
+FROM python:3.8
 LABEL maintainer="AzurCrystal"
 
 ARG PUID=1000
@@ -6,12 +6,6 @@ ENV PYTHONIOENCODING=utf-8
 RUN set -x \ 
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo 'Asia/Shanghai' >/etc/timezone \
-        && { \
-                echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free"; \
-                echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free"; \
-                echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free"; \
-                echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free"; \
-        } > /etc/apt/sources.list \
         && rm -rf /var/lib/apt/lists/* \
         && apt-get clean \
         && apt-get update \
@@ -20,7 +14,6 @@ RUN set -x \
         && su yobot -c \
                 "mkdir -p /home/yobot \
                 && cd /home/yobot \
-                && git clone https://gitee.com/yobot/yobot.git \
                 && { \
                         echo '#!/bin/sh'; \
                         echo 'cd /home/yobot/yobot/src/client && python3 /home/yobot/yobot/src/client/main.py && sh /home/yobot/yobot/src/client/yobotg.sh'; \
