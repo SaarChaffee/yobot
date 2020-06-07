@@ -38,13 +38,6 @@ mirai 尚未稳定，稳定后本站会发布教程和一键安装包。如果�
 
 ## yobot 问题
 
-### yobot 对国服的支持情况
-
-公会战：支持  
-竞技场：不支持  
-新闻推送：支持  
-活动日程：支持  
-
 ### 机器人提供的网站无法登录
 
 请参考[无法打开网页](./cannot-open-webpage.md)
@@ -85,6 +78,18 @@ yobot 自动添加第一个登录的用户为最高权限，如果需要手动�
 Nginx: `proxy_set_header X-Real-IP $remote_addr;`  
 Apache: `RemoteIPHeader X-Real-IP`
 
+### 使用docker-compose运行后提示 " [Errno 13] Permission denied: 'yobotg.sh' "
+
+请参考[Docker部署](../install/docker.md)，
+此类情况均是由 root 账户直接运行 docker 实例造成的。
+在源码根目录中执行：
+
+```shell
+chown -R 1000:1000 .
+```
+
+以解决该问题。
+
 ### 这里没有我的问题
 
-可以在[这里](https://github.com/yuudi/yobot/issues)提问，提问前可以阅读[正确的提问姿势](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)
+可以在QQ群（{{ [770947581,1044314369,1067699252,774394459][Math.floor(Math.random()*3)] }}）或[github issue](https://github.com/yuudi/yobot/issues)提问，提问前可以阅读[正确的提问姿势](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)
