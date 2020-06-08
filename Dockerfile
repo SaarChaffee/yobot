@@ -14,7 +14,7 @@ RUN set -x \
         && su yobot -c \
         "mkdir -p /home/yobot \
         && cd /home/yobot \
-        && git clone https://github.com/yuudi/yobot.git \
+        && git clone https://gitee.com/saarchaffee/yobot.git \
         && { \
         echo '#!/bin/sh'; \
         echo 'cd /home/yobot/yobot/src/client && python3 /home/yobot/yobot/src/client/main.py && sh /home/yobot/yobot/src/client/yobotg.sh'; \
