@@ -12,15 +12,15 @@ RUN set -x \
         && apt-get install git -y --no-install-recommends --no-install-suggests \
         && useradd -u $PUID -m yobot \
         && su yobot -c \
-                "mkdir -p /home/yobot \
-                && cd /home/yobot \
-                && git clone https://gitee.com/yobot/yobot.git \
-                && { \
-                        echo '#!/bin/sh'; \
-                        echo 'cd /home/yobot/yobot/src/client && python3 /home/yobot/yobot/src/client/main.py && sh /home/yobot/yobot/src/client/yobotg.sh'; \
-                } > /home/yobot/entry.sh \
-		&& chmod 755 /home/yobot/entry.sh \
-		&& chmod +x /home/yobot/entry.sh" \
+        "mkdir -p /home/yobot \
+        && cd /home/yobot \
+        && git clone https://github.com/yuudi/yobot.git \
+        && { \
+        echo '#!/bin/sh'; \
+        echo 'cd /home/yobot/yobot/src/client && python3 /home/yobot/yobot/src/client/main.py && sh /home/yobot/yobot/src/client/yobotg.sh'; \
+        } > /home/yobot/entry.sh \
+        && chmod 755 /home/yobot/entry.sh \
+        && chmod +x /home/yobot/entry.sh" \
         && pip3 install --no-cache-dir -r /home/yobot/yobot/src/client/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple \
         && apt-get clean autoclean \
         && apt-get autoremove -y \
