@@ -1,11 +1,6 @@
 {
-    "stable": {
-<<<<<<< HEAD
-        "version": 3494,
-        "url": "http://img.yobot.xyz/yobot/yobot3494.zip"
-=======
-        "version": 3495,
-        "url": "http://img.yobot.xyz/yobot/yobot3495.zip"
->>>>>>> upstream/master
-    }
+  "stable": {
+    "version": 3495,
+    "url": "http://img.yobot.xyz/yobot/yobot3495.zip"
+  }
 }
