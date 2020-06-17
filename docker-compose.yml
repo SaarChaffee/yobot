@@ -57,7 +57,7 @@ services:
       - bot_net
 
   mynginx:
-    image: _/nginx
+    image: nginx
     ports:
       - "80:80"
     restart: on-failure
