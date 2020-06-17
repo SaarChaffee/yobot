@@ -56,7 +56,7 @@ services:
     networks:
       - bot_net
 
-  nginx:
+  mynginx:
     image: nginx
     ports:
       - "80:80"
