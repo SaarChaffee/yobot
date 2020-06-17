@@ -56,6 +56,16 @@ services:
     networks:
       - bot_net
 
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    restart: false
+    volumes:
+      - ../nginx/conf/nginx.conf:/etc/nginx/conf.d/
+    networks:
+      - bot_net
+
 networks:
   bot_net:
     driver: bridge
