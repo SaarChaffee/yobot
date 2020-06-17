@@ -23,9 +23,9 @@ services:
       - CQHTTP_USE_HTTP=false
       - CQHTTP_USE_WS=false
       - CQHTTP_USE_WS_REVERSE=true
-      - CQHTTP_WS_REVERSE_API_URL=ws://bot:9222/ws/api/
-      - CQHTTP_WS_REVERSE_EVENT_URL=ws://bot:9222/ws/event/
-      - CQHTTP_WS_REVERSE_URL=ws://bot:9222
+      - CQHTTP_WS_REVERSE_API_URL=ws://nginx:9220/ws/api/
+      - CQHTTP_WS_REVERSE_EVENT_URL=ws://nginx:9220/ws/event/
+      - CQHTTP_WS_REVERSE_URL=ws://nginx:9220
       - CQHTTP_WS_REVERSE_RECONNECT_INTERVAL=4000
       - CQHTTP_REVERSE_RECONNECT_ON_CODE_1000=true
       - CQHTTP_POST_MESSAGE_FORMAT=string
@@ -60,6 +60,7 @@ services:
     image: nginx
     ports:
       - "80:80"
+      - "9220:9220"
     restart: on-failure
     volumes:
       - ../nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
