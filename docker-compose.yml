@@ -62,7 +62,7 @@ services:
       - "80:80"
     restart: on-failure
     volumes:
-      - ../nginx/conf/nginx.conf:/etc/nginx/conf.d/
+      - ../nginx/conf/:/etc/nginx/
     networks:
       - bot_net
 
