@@ -45,6 +45,20 @@ services:
     networks:
       - bot_net
 
+  hosbot:
+    build: ../HoshinoBot
+      ports:
+        - "9221:9221"
+      container_name: skadi_hoshino
+      restart: on-failure
+      volumes:
+        - ../HoshinoBot:/home/HoshinoBot/HoshinoBot
+      networks:
+        - bot_net
+  
+  
+
+
 networks:
   bot_net:
     driver: bridge
