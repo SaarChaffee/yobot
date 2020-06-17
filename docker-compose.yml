@@ -48,7 +48,7 @@ services:
   hosbot:
     build: ../HoshinoBot
     ports:
-      - "9221:9221"
+      - "9222:9222"
     container_name: skadi_hoshino
     restart: on-failure
     volumes:
