@@ -23,6 +23,15 @@ services:
     networks:
       - bot_net
 
+  mirai:
+    image: lqbing/cqhttp-mirai
+    restart: always
+    env_file: .env
+    stdin_open: true
+    tty: true
+    networks:
+      - bot_net
+
 networks:
   bot_net:
     driver: bridge
