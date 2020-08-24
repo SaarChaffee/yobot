@@ -30,7 +30,9 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ../mirai:/workdir
+      - ../mirai/config.txt:/workdir/config.txt
+      - ../mirai/setting.yml:/workdir/plugins/setting.yml
+      - ../mirai/device.json:/workdir/device.json
     networks:
       - bot_net
 
